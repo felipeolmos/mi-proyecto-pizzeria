@@ -1,0 +1,111 @@
+/* Estilo para #root */
+#root {
+  max-width: 1200px; /* Define el ancho máximo del contenedor principal */
+  margin: 0 auto; /* Centra el contenedor principal dentro del viewport */
+  padding: 0; /* Elimina cualquier padding adicional */
+  box-sizing: border-box; /* Asegura que el padding y los bordes se incluyan dentro del ancho total */
+  display: flex; /* Convierte el #root en un contenedor flex para organizar los elementos */
+  flex-direction: column; /* Apila los elementos en una columna */
+  align-items: center; /* Centra los elementos dentro del contenedor de forma horizontal */
+}
+
+/* Contenedor Principal */
+.main-container {
+  width: 100%; /* Ocupa todo el ancho disponible dentro de #root */
+  padding: 0 15px; /* Añade un pequeño padding lateral para separar el contenido de los bordes */
+  box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+}
+
+/* Estilos del Header */
+.header-banner {
+  width: 100%; /* El header ocupa todo el ancho del contenedor principal */
+  height: 300px; /* Define una altura fija para el header */
+  background-image: url('./assets/header.png'); /* Ruta real de la imagen del header */
+  background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el área del header */
+  background-position: center; /* Centra la imagen de fondo dentro del header */
+  display: flex; /* Aplica flexbox al header para alinear el contenido internamente */
+  align-items: center; /* Centra verticalmente el contenido dentro del header */
+  justify-content: center; /* Centra horizontalmente el contenido dentro del header */
+  color: white; /* Define el color del texto */
+  position: relative; /* Necesario para posicionar correctamente el overlay */
+  margin-bottom: 20px; /* Añade un margen inferior para separar visualmente el header del contenido */
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho total del header */
+}
+
+.header-content {
+  text-align: center; /* Centra el texto dentro del header */
+  z-index: 1; /* Coloca el contenido por encima del overlay del header */
+}
+
+.header-banner::before {
+  content: ''; /* Crea un pseudo-elemento que actúa como un overlay */
+  position: absolute; /* Posiciona el overlay sobre la imagen de fondo */
+  top: 0;
+  left: 0;
+  width: 100%; /* Hace que el overlay cubra todo el ancho del header */
+  height: 100%; /* Hace que el overlay cubra toda la altura del header */
+  background-color: rgba(0, 0, 0, 0.5); /* Añade un color oscuro semi-transparente para mejorar la legibilidad del texto */
+  z-index: 0; /* Coloca el overlay detrás del contenido del header */
+}
+
+/* Estilos de las Cards */
+.cards-container {
+  display: flex; /* Convierte el contenedor de las cards en un flexbox */
+  flex-direction: row; /* Alinea las cards en una fila horizontal */
+  justify-content: center; /* Centra las cards horizontalmente dentro del contenedor */
+  gap: 10px; /* Añade un espacio entre cada card */
+  flex-wrap: wrap; /* Permite que las cards pasen a la siguiente línea si no hay suficiente espacio horizontal */
+  max-width: 90%; /* Reduce el ancho máximo del contenedor de las cards para que sea más estrecho que el header */
+  margin: 0 auto; /* Centra el contenedor de las cards dentro de la página */
+  padding: 0; /* Elimina cualquier padding adicional */
+}
+
+.card-custom {
+  flex: 0 0 auto; /* Mantiene el tamaño fijo de las cards sin permitir que se expandan o reduzcan */
+  width: 18rem; /* Define un ancho fijo para cada card */
+  overflow: hidden; /* Evita que el contenido de las cards desborde el contenedor */
+  border-radius: 5px; /* Redondea los bordes de las cards */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Añade transición para efectos hover */
+}
+
+.card-custom img {
+  width: 100%; /* Hace que las imágenes dentro de las cards ocupen todo el ancho de la card */
+  height: 200px; /* Define una altura fija para las imágenes, asegurando que todas sean uniformes */
+  object-fit: cover; /* Recorta la imagen para ajustarse al espacio sin distorsionarse */
+  display: block; /* Elimina cualquier espacio blanco debajo de la imagen */
+}
+
+/* Contenido de Texto dentro de las Cards */
+.card-custom .card-body {
+  flex: 1; /* Permite que el contenido de texto se ajuste */
+  display: flex; /* Usa flexbox dentro de la card */
+  flex-direction: column; /* Organiza el texto en columna */
+  justify-content: space-between; /* Distribuye el texto dentro de la card */
+  padding: 10px; /* Añade padding interno para separar el texto de los bordes */
+}
+
+/* Estilo para los Botones del Navbar */
+.navbar-buttons .btn {
+  padding: 8px 15px; /* Ajusta el padding de los botones */
+  font-size: 14px; /* Tamaño de fuente para mantenerlos consistentes */
+  border: 1px solid #fff; /* Borde blanco para resaltar sobre el fondo negro */
+  color: #fff; /* Color del texto blanco para los botones */
+  background: rgba(255, 255, 255, 0.1); /* Fondo más claro para destacar los botones */
+  border-radius: 4px; /* Bordes redondeados para suavizar los botones */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.navbar-buttons .btn:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Efecto hover más claro */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+/* Ajustes para el Footer */
+.footer-custom {
+  background-color: #000;
+  color: rgba(255, 255, 255, 0.8); /* Color de texto un poco más claro */
+  text-align: center;
+  padding: 25px 0; /* Mejora del padding para más espacio */
+  font-size: 14px; /* Ajusta el tamaño de la fuente */
+}
+

@@ -1,0 +1,25 @@
+// NavbarPizza.jsx
+import React from 'react';
+import Container from 'react-bootstrap/Container'; // Importa el contenedor de Bootstrap
+import Navbar from 'react-bootstrap/Navbar'; // Importa el componente Navbar de Bootstrap
+import Button from 'react-bootstrap/Button'; // Importa el componente Button de Bootstrap
+//import './App.css'; // Asegúrate de importar los estilos globales para aplicar el CSS
+
+const NavbarPizza = ({ nombre }) => {
+  return (
+    // Componente Navbar con clase personalizada para aplicar estilos
+    <Navbar expand="lg" className="bg-body-tertiary navbar-custom">
+      <Container fluid className="navbar-container"> {/* Contenedor fluido para el contenido del navbar */}
+        <Navbar.Brand href="#" className="navbar-brand">{nombre}</Navbar.Brand> {/* Muestra el nombre de la marca */}
+        <div className="navbar-buttons"> {/* Contenedor para los botones del navbar */}
+          <Button variant="outline-success">Home</Button> {/* Botón Home */}
+          <Button variant="outline-success">Login</Button> {/* Botón Login */}
+          <Button variant="outline-success">Register</Button> {/* Botón Register */}
+          <Button variant="outline-success">Menu</Button> {/* Botón Menu */}
+        </div>
+      </Container>
+    </Navbar>
+  );
+};
+
+export default NavbarPizza; // Exporta el componente para ser utilizado en otras partes de la aplicación
