@@ -109,3 +109,65 @@
   font-size: 14px; /* Ajusta el tamaño de la fuente */
 }
 
+/* Estilo para centrar el formulario verticalmente en la página */
+.login-container {
+  display: flex; /* Usamos flexbox para permitir la alineación vertical y horizontal */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  min-height: 100vh; /* Asegura que el contenedor tenga la altura mínima del 100% de la ventana */
+}
+
+/* Estilo para el formulario */
+.login-form {
+  margin-bottom: 20px; /* Añade un margen inferior de 20px para separar el formulario del pie de página */
+  max-width: 400px; /* Limita el ancho máximo del formulario para que no sea demasiado amplio */
+}
+
+/* Estilo para el botón de "Iniciar sesión" */
+.btn-primary {
+  padding: 10px 20px; /* Añade espacio interno para hacer el botón más grande */
+  font-size: 16px; /* Aumenta el tamaño de la fuente para mejorar la legibilidad */
+  transition: background-color 0.3s ease; /* Crea una transición suave para el color de fondo */
+}
+
+/* Efecto hover para el botón */
+.btn-primary:hover {
+  background-color: #0056b3; /* Cambia el color del botón al pasar el ratón */
+}
+
+/* Estilo para las alertas */
+.alert {
+  margin-top: 15px; /* Añade un margen superior para separar las alertas del campo superior */
+}
+
+/* Estilo para la alerta de éxito */
+.alert-success {
+  color: #155724; /* Color de texto verde oscuro */
+  background-color: #d4edda; /* Fondo verde claro */
+  border-color: #c3e6cb; /* Borde verde */
+}
+
+/* Estilo para la alerta de error */
+.alert-danger {
+  color: #721c24; /* Color de texto rojo oscuro */
+  background-color: #f8d7da; /* Fondo rojo claro */
+  border-color: #f5c6cb; /* Borde rojo */
+}
+
+/* Estilo para inputs con error */
+.is-invalid {
+  border-color: red; /* Borde rojo para indicar un error */
+}
+
+/* Media query para pantallas pequeñas (responsive design) */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px; /* Añade padding para que no esté tan pegado a los bordes en móviles */
+  }
+
+  .btn-primary {
+    width: 100%; /* El botón ocupa todo el ancho en pantallas pequeñas */
+  }
+}
+
+
