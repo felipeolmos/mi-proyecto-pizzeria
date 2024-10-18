@@ -1,20 +1,30 @@
-import Card from 'react-bootstrap/Card';
+import Card  from 'react-bootstrap/Card';
+import Button from "react-bootstrap/Button";
 
+const CardPizza = ({pizzasInfo, add}) =>{
 
-
-const CardPizza = ({image, name, desc, price}) =>{
+  const ingredientesMap = pizzasInfo.ingredients.map(ingredients => <li key={ingredients}>{ingredients}</li>)
+ 
     return(
         <div className="cards-container">
             <Card className="card-custom">
-              <Card.Img variant="top" src={image} />
+              <Card.Img variant="top" src={pizzasInfo.img} />
               <Card.Body>
-                <Card.Title>{name}</Card.Title>
+                <Card.Title>{pizzasInfo.name}</Card.Title>
                 <Card.Text>
-                  {desc}
+                  {pizzasInfo.desc}
                 </Card.Text>
                 <Card.Text>
-                  {price}
+                {new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(
+                        pizzasInfo.price,
+                    )}
                 </Card.Text>
+                
+                <ul>
+                    {ingredientesMap}
+                </ul>
+                <a className="btn btn-primary" href={`/pizza/${pizzasInfo.id}`}>ver más</a>
+                <Button onClick={() => add(pizzasInfo)}>Agregar</Button>
               </Card.Body>
               
             </Card>

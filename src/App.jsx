@@ -13,9 +13,9 @@ function App() {
   <>
   <div className="main-container">
   <NavbarPizza nombre="¡Pizzeria Mamma Mía!" home="Home" login="Login" register="Register" />
-  {/* <Home /> */}
+  <Home />
   {/* <Register/> */}
-  <Login2 />
+  {/* <Login2 /> */}
   
   <Footer pie="© 2024 - Pizzería Mamma Mia! - Todos los derechos reservados"/>
   </div>

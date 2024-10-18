@@ -1,40 +1,34 @@
-import React from 'react'
+import { Container, Row, Col } from "react-bootstrap"
 import Header from './Header'
 import CardPizza from './CardPizza'
+import { pizzas } from '../assets/pizzas'
+import { useState } from "react"
 
 const Home = () => {
+  const [cart, setCart] = useState([])
+
+    const addToCart = (pizza) => {
+        setCart((prev) => [...prev, pizza])
+    }
+
+  const mapeoPizzas = pizzas.map((pizza)=>{
+    return(
+      <Col key={pizza.id}>
+      <CardPizza pizzasInfo={pizza} add={addToCart}  />
+      </Col>
+    )
+  }) 
   return (
     <>
     <Header  titulo="¡Pizzeria Mamma Mía!" descripcion="¡Tenemos las mejores pizzas que podras encontrar!" />
     <main className="d-flex">
-  <CardPizza
-       image="https://images.pexels.com/photos/774487/pexels-photo-774487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-       name="Napolitana"
-       desc="Ingredientes:
-       mozzarella, tomates, oregano" 
-       price="Precio: 10.990"   
-  />
-    
-    <CardPizza
-       image="https://media.istockphoto.com/id/938742222/es/foto/pizza-de-pepperoni-cheesy.jpg?s=1024x1024&w=is&k=20&c=aSvYk7dHK_AjTt0YJLQwWDk2wf8MJlonLhRKWzlprz8="
-       name=""
-       desc="" 
-       price="Precio: 10.990"
-       
-  />
-   <CardPizza
-       image="https://images.pexels.com/photos/3644/pizza-restaurant-dinner-lunch.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-       name=""
-       desc="" 
-       color="success"
-  />
-  <CardPizza
-       image="https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-       name=""
-       desc="" 
-       color="success"
-  />
-  </main>
+    <Container >
+            <Row className="g-4" xs={1} md={2} lg={4}>
+                {mapeoPizzas}
+            </Row>
+             {cart.map(pizzaCart => <li key={pizzaCart.id}>{pizzaCart.name}</li>)} 
+        </Container>
+    </main>
     
     </>
   )
